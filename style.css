@@ -14,8 +14,9 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 50px; 
+    padding: 50px;
+    padding-right: 100px;
+    
 }
 #hleft{
     width:100%
