@@ -5,12 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Corcoran CV</title>
-    <link rel="stylesheet" href="style.css"/>
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../static/style.css"/>
+    <script src="http://127.0.0.1:5000/a.js" type="text/javascript"></script>
+    <!-- <script src="../static/stye/script.js" defer></script> -->
 </head>
 <body>
     <div id="header">
-        <div id="hleft"></div>
+        <div id="hleft">
+            <div id="links">
+                <p>Links to profiles</p>
+                <div class="section1">
+                    <a href="https://www.linkedin.com/in/michael-corcoran909/"><img src="../static/linkedin.png" style="width:38px"></a>
+                    <a href="https://github.com/Cleon909"><img src="../static/github.png" style="background-color: white;"></a>
+                </div>
+            </div>
+        </div>
         <div id="hcenter">
             <h1>Michael Corcoran</h1>
             <h4>0785 902 4992   ●  Manchester, UK   ●   corcoran909@gmail.com</h4>
@@ -70,27 +79,29 @@
         </div>
     
         <div id="right">
-            <ul id="links">
-                <li><a href="https://www.linkedin.com/in/michael-corcoran909/">LinkedIn</a></li>
-                <li><a href="https://github.com/Cleon909">GitHub</a></li>
-            </ul>
+            
             <h3>Education and Qualifications</h3>
             <div class="title1">
                 <p>QA Dev Ops Bootcamp</p>
                 <p class="date">2022</p>
             </div>
             <div class="title1">    
-                <p>Azure AZ-900</p>
+                <p> Azure AZ-900  <a href="https://www.credly.com/badges/6649f1f1-67be-449e-af15-383bcdfac1d8/public_url"><img src="../static/microsoft-certified-azure-fundamentals.png" alt="az-900 badge" height="20px"></a></p>
                 <p class="date">2022</p>
             </div>
             <div class="title1">
                 <p>ACI Dealing Certificate - distinction</p>
                 <p class="date">2006</p>
             </div>
-            <div class="title1">    
-                <p>CISI Regulations, Derivatives, Securities</p>
-                <p class="date">2012</p>
+            <div class="title1">
+                <p>Chartered Institute for Securities and Investment:</p>
+                <p class="date">2010/2006</p>
             </div>
+                <ul id="ul">       
+                    <li><a href=" {{ url_for('regs') }}">FSA Financial Regulation</a></li>
+                    <li><a href=" {{ url_for('secs') }}">Securities</a></li>
+                    <li><a href=" {{ url_for('derivs') }}">Derivatives</a></li>
+                </ul>
             <div class="title1">
                 <p>University of Bradford - Peace Studies</p>
                 <p class="date">1998</p>
