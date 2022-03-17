@@ -1,6 +1,7 @@
 from flask import render_template, request, url_for
 from application import app, db
 from application.models import PageView
+from flask_sqlalchemy import SQLAlchemy
 
 
 @app.route('/', methods = ['GET'])
