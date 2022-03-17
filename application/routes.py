@@ -1,11 +1,13 @@
 from flask import render_template, request, url_for
 from application import app, db
-from application.models import Count
+from application.models import PageView
+
 
 @app.route('/', methods = ['GET'])
 @app.route('/cv', methods = ['GET'])
 def index():
-    return render_template('cv.html')
+    number_of_visitors = PageView.query.count()
+    return render_template ('cv.html', visits = number_of_visitors)
 
 @app.route('/regs', methods= {'GET'})
 def regs():
