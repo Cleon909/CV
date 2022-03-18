@@ -2,13 +2,17 @@ from flask import render_template, request, url_for
 from application import app, db
 from application.models import PageView
 from flask_sqlalchemy import SQLAlchemy
+import datetime
 
 
 @app.route('/', methods = ['GET'])
 @app.route('/cv', methods = ['GET'])
 def index():
-    number_of_visitors = PageView.query.count()
-    return render_template ('cv.html', visits = number_of_visitors)
+    pageview = PageView(name="visit")
+    db.session.add(pageview)
+    db.session.commit()
+    visits = PageView.query.count()
+    return render_template ('cv.html', visits = visits)
 
 @app.route('/regs', methods= {'GET'})
 def regs():
