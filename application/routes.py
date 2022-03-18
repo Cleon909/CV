@@ -8,9 +8,6 @@ import datetime
 @app.route('/', methods = ['GET'])
 @app.route('/cv', methods = ['GET'])
 def index():
-    pageview = PageView(name="visit")
-    db.session.add(pageview)
-    db.session.commit()
     visits = PageView.query.count()
     return render_template ('cv.html', visits = visits)
 
