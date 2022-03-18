@@ -13,10 +13,11 @@ services:
       replicas: 1
     ports:
     - target: 3306
-      published: 3006
+      published: 3306
   analytics:
     image: corcoran909/analytics
     ports:
     - target: 5000
+      published: 8080
     deploy:
       replicas: 1
