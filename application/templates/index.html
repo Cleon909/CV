@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Corcoran CV</title>
     <link rel="stylesheet" href="style.css"/>
-    <script defer src="index.js"></script>
+    <script>
+        function cb(response) {
+            document.getElementById('cntr').innerText = response.value;
+        }
+        </script>
+        <script async src="https://api.countapi.xyz/hit/www.mikescv.co.uk/visits?callback=cb"></script>
+    <!-- <script defer src="script.js"></script> -->
     <!-- <script src="http://192.168.0.16:5001/a.js" type="text/javascript"></script> -->
     <!-- <script src="../static/stye/script.js" defer></script> -->
 </head>
@@ -35,7 +41,7 @@
         <div id="center">
             <p class="section">Experience</p>
             <div class="title">
-                <p class="section1">QA - Dev Ops and Digital Skills Bootcamp (Level 4)</p>
+                <p class="section1"><a href="https://www.qa.com/training/digital-skills-bootcamps/qa-digital-skills-bootcamps-national/">QA - Dev Ops and Digital Skills Bootcamp (Level 4)</a></p>
                 <p class="date">2022</p>
             </div>    
             <div class="title">

@@ -1,22 +1,33 @@
 //script for CV//
 
 //counter for views//
-var n = localStorage.getItem('on_load_counter');
 
-if (n === null) {
-    n = 0;
-}
-n++;
+const counter = document.querySelector('#cntr');
 
-localStorage.setItem("on_load_counter",n);
+const getCount = () => {
+    const response = fetch("https://api.countapi.xyz/get/www.mikescv.co.uk/1234");
+    const data = response.json();
+    setValue(data.value);
+  };
+  
+const incrementCount = () => {
+    const response = fetch("https://api.countapi.xyz/hit/www.mikescv.co.uk/1234");
+    const data = response.json();
+    setValue(data.value);
+  };
 
-nums = 
+const setValue = (num) => {
+      counter.innerHTML = num;
+  };
 
-function counter_fn() {
-    var counter = document.getElementById("cntr");
-    var count = 0;
-    count = parseInt(counter.innerHTML);
-    count = count + 1;
-    counter.innerHTML = count;
+if (localStorage.getItem("hasVisited") == null) {
+    incrementCount()
+      .then(() => {
+        localStorage.setItem("hasVisited", "true");
+      })
+      .catch((err) => console.log(err));
+  } else {
+    getCount()
+      .catch((err) => console.log(err));
   }
-  window.onload = counter_fn;
+
